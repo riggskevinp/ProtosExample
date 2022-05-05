@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+message Model {
+    string model_name = 1;
+    int32 serial_number = 2;
+}
+
+message GnssLocation {
+    double longitude = 1;
+    double latitude = 2;
+}
+
+message Diagnostic {
+    double engine_speed = 1;
+}
+
+
+message TruckState {
+    enum MachineState {
+        IN_TRANSIT = 0;
+        STATIONARY = 1;
+        LOADING    = 2;
+        UNLOADING  = 3;
+        FULL       = 4;
+        EMPTY      = 5;
+    }
+    MachineState current_state = 1;
+}
+
+
+message ArmAngles {
+    double house_to_chassis = 1;
+    double boom_angle = 2;
+    double arm_angle = 3;
+    double bucket_angle = 4;
+}
