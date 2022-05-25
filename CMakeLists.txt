@@ -12,3 +12,5 @@ add_library(Protos_Example ${PROTO_SRCS} ${PROTO_HDRS})
 add_custom_target(proto_python ALL DEPENDS ${PROTO_PYS})
 
 set(ProtobufMessagesIncludePath ${CMAKE_CURRENT_BINARY_DIR} PARENT_SCOPE)
+set(PROTO_SRCS ${PROTO_SRCS} PARENT_SCOPE)
+set(PROTO_HDRS ${PROTO_HDRS} PARENT_SCOPE)
